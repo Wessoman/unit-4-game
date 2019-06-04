@@ -1,13 +1,12 @@
 $(document).ready(function() {
 
-	// random number array
+
 	var rand = [];
 
 	for (var r = 19; r < 121; r++) {
 		rand.push(r);
 	}
 
-	// crystal numbers array
 	var crystals = [];
 
 	for (var c = 1; c < 13; c++) {
@@ -15,9 +14,9 @@ $(document).ready(function() {
 		crystals.push(c);
 	}
 
-	console.log(crystals);
+    console.log(crystals);
 
-	// ******* GLOBAL VARIABLES *******
+
 
 	// random variables selected by computer
 	var randNumber; // number to match
@@ -73,5 +72,77 @@ $(document).ready(function() {
 		c2 = arr[1];
 		c3 = arr[2];
 		c4 = arr[3];
-    } // END of crystalValues function
-    
+	} // END of crystalValues function
+
+	function gameReset(x) {
+
+		crystalNumbers = []; // clears crystal number values
+
+		pickRandomNumber(rand);
+
+		pickRandomCrystals(crystals);
+
+		crystalValues(crystalNumbers);
+
+		totalScore = 0;
+		$("#totalNumber").html(totalScore);
+
+		alert(x);
+	} // END of gameReset function
+
+	// *** GAME SETTINGS AT START ***
+
+	pickRandomNumber(rand); 
+	pickRandomCrystals(crystals); 
+	crystalValues(crystalNumbers);
+
+		// crystal button functions
+
+		$("#button-1").on("click", function() {
+
+			totalScore += c1;
+			$("#totalNumber").html(totalScore);
+		});
+
+		$("#button-2").on("click", function() {
+
+			totalScore += c2;
+			$("#totalNumber").html(totalScore);
+		});
+
+		$("#button-3").on("click", function() {
+
+			totalScore += c3;
+			$("#totalNumber").html(totalScore);
+		});
+
+		$("#button-4").on("click", function() {
+
+			totalScore += c4;
+			$("#totalNumber").html(totalScore);
+		});
+
+	$("button").on("click", function() {
+	
+		if (totalScore == randNumber) {
+
+			wins++;
+			console.log(totalScore);
+			$("#totalNumber").html(totalScore);
+			$("#wins").html("Wins: " + wins);
+
+
+			setTimeout(function() {gameReset("YOU ARE A WINNER!!")}, 200);
+		}
+
+		else if (totalScore > randNumber){
+
+			losses++;
+			$("#totalNumber").html(totalScore);
+			$("#losses").html("Losses: " + losses);
+
+			setTimeout(function() {gameReset("YOU LOSER!")}, 200);
+		}
+	});
+
+}); 
