@@ -1,48 +1,77 @@
-$( document ).ready(function(){
-  var Random=Math.floor(Math.random()*101+19)
-  // Selects a random number between 12-120 for start of game
-  //
-  $('#randomNumber').text(Random);
-  console.log("random number: " + Random);
-  // Appending random number to the randomNumber id in the html doc
-  //
-  var c1= Math.floor(Math.random()*11+1)
-  var c2= Math.floor(Math.random()*11+1)
-  var c3= Math.floor(Math.random()*11+1)
-  var c4= Math.floor(Math.random()*11+1)
-  // Setting up random numbers for each crystal between one and twelve
-  // 
-  var userTotal= 0; 
-  var wins= 0;
-  var losses = 0;
-  //  Decaring variables for tallies
-$('#numberWins').text(wins);
-$('#numberLosses').text(losses);
-//resets the game
-function reset(){
-      Random=Math.floor(Math.random()*101+19);
-      console.log(Random)
-      $('#randomNumber').text(Random);
-      c1= Math.floor(Math.random()*11+1);
-      c2= Math.floor(Math.random()*11+1);
-      c3= Math.floor(Math.random()*11+1);
-      c4= Math.floor(Math.random()*11+1);
-      userTotal= 0;
-      $('#finalTotal').text(userTotal);
-      } 
-//adds the wins to the userTotal
-function awesomeness(){
-alert("You are a WINNER!!!");
-  wins++; 
-  $('#numberWins').text(wins);
-  console.log(wins);
-  reset();
-}
-//addes the losses to the userTotal
-function loser(){
-    alert ("You LOSER!!");
-      losses++;
-      $('#numberLosses').text(losses);
-      console.log(losses);
-      reset()
-    }
+$(document).ready(function() {
+
+	// random number array
+	var rand = [];
+
+	for (var r = 19; r < 121; r++) {
+		rand.push(r);
+	}
+
+	// crystal numbers array
+	var crystals = [];
+
+	for (var c = 1; c < 13; c++) {
+
+		crystals.push(c);
+	}
+
+	console.log(crystals);
+
+	// ******* GLOBAL VARIABLES *******
+
+	// random variables selected by computer
+	var randNumber; // number to match
+	var crystalNumbers = []; // for array of random crystal values
+
+	var c1;
+	var c2;
+	var c3;
+	var c4;
+
+  var totalScore = 0; // user's score
+
+	var wins = 0;
+	var losses = 0;
+
+	// ******* FUNCTIONS *******
+
+	// pick a random number
+	function pickRandomNumber(arr) {
+
+		var x = arr[Math.floor(Math.random() * arr.length)];
+		randNumber = x;
+		$("#randomNumber").html(randNumber);
+
+		console.log("random number: " + randNumber);
+
+	} // END of pickRandomNumber function
+
+	// pick random numbers for crystals
+
+	function pickRandomCrystals(arr) {
+
+		for (var y = 0; y < 4; y++){
+
+			var a = arr[Math.floor(Math.random() * arr.length)];
+
+			crystalNumbers.push(a);
+		}
+    // check which numbers have been picked
+		console.log("crystal numbers: " + crystalNumbers);
+
+	} // END of pickRandomCrystals function
+
+	function crystalValues(arr) {
+
+		// change value of each crystal button according to array
+		for (i = 0; i < arr.length; i++) {
+
+		$("#button-" + (i+1)).attr("value", arr[i]);
+		console.log(this);
+		}
+		c1 = arr[0];
+		c2 = arr[1];
+		c3 = arr[2];
+		c4 = arr[3];
+    } // END of crystalValues function
+    
