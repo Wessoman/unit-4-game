@@ -19,4 +19,4 @@ ver .02b Upload initial HTML and logo
 ver .03b added game instructions.
 ver .04b added HTML framework concept
 ver .05b prototype JS concept
-
+ver .06b adds the wins/losses alert and counter
