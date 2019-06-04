@@ -75,12 +75,13 @@
   
   #logo {
     float: left;
-    width: 250px;
+    width: 300px;
     height: 100px;
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 28px;
     font-weight: 700;
     line-height: 42px;
+    padding-top: 25px;
     color: cornsilk;
     text-align: center;
     text-decoration: none;
