@@ -17,4 +17,6 @@ on it.
 ver .01b Initial files
 ver .02b Upload initial HTML and logo
 ver .03b added game instructions.
+ver .04b added HTML framework concept
+
 

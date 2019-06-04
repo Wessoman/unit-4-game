@@ -17,10 +17,35 @@
 	<div class="container">
          <a id="logo">CrystalsCollector!</a>
 
-         <p>You will be given a random number at the start of the game.  There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.  You win the game by matching your total score to the ramdom number, you lose the game if your total score goes above the random number.</p>
-<p>The value of each crystal is hidden from you until you click on it.  Each time when the game starts, the game will change the values of each crystal.</p>
+         <p>You will be given a random number at the start of the game.  There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.  You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.</p>
+         <p>The value of each crystal is hidden from you until you click on it.  Each time when the game starts, the game will change the values of each crystal.</p>
+  </div>
 
-    </div>
+<!-- game section -->
+<div class="row" id="gameSection">
+
+  <!-- first column for random number -->
+  <div class="col-md-3" id="numberToMatch">
+    <h3 class="text-center" id="random">Match Number:</h3>
+    <h1 class="numberBox text-center" id="randomNumber">120</h1>
+  </div>
+
+  <!-- second column for buttons -->
+  <div class="col-md-6 text-center" id="buttonSection">
+
+    <!-- first crystal -->
+    <button id="button-1" value="0"><img src="assets/images/Ruby.jpg" height=100 width=100 class="img-responsive icons" id="icon1"></button>
+
+    <!-- second crystal -->
+    <button id="button-2" value="0"><img src="assets/images/Titanium.jpg" height=100 width=100 class="img-responsive icons" id="icon2"></button>
+
+    <!-- third crystal -->
+    <button id="button-3" value="0"><img src="assets/images/Cavansite.jpg" height=100 width=100 class="img-responsive icons" id="icon3"></button>
+
+    <!-- fourth crystal -->
+    <button id="button-4" value="0"><img src="assets/images/Dolemite.jpg" height=100 width=100 class="img-responsive icons" id="icon4"></button>
+
+  </div>
 
 
     	<!-- GAME ENGINE -->
