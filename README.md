@@ -23,3 +23,4 @@ ver .06b adds the wins/losses alert and counter
 ver .10b changed engine design
 ver .16b Engine completion, stable version?
 ver .17b Index php and Heroku deployment
+ver .18b fixed bug in deployment

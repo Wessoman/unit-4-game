@@ -91,7 +91,7 @@
 </body>
 
 <!-- game engine-->
-<script src="assets/javascript/game.js"></script>
+<script src="assets/JavaScript/game.js"></script>
 
 </html>
 
